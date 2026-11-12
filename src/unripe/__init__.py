@@ -11,7 +11,7 @@ Library use:
 
 from __future__ import annotations
 
-__version__ = "0.11.0"
+__version__ = "0.12.0"
 
 __all__ = ["__version__", "scan"]
 
@@ -27,7 +27,8 @@ def scan(
     Check every lockfile under `paths` and return one Finding per locked version.
 
     `since` is a git ref: only versions added since that ref are checked.
-    Raises unripe.check.Problem when a lockfile cannot be read or the ref is bad.
+    Raises unripe.check.Problem when no lockfile is found, a lockfile cannot be
+    read, or the ref is bad.
     """
     # imported here so `from unripe import __version__` stays cheap and cycle free
     from unripe.check import Problem, check
@@ -39,4 +40,6 @@ def scan(
     result = check(paths or ["."], policy, registries, since=since)
     if result.unreadable:
         raise Problem("; ".join(message for _, message in result.unreadable))
+    if not result.lockfiles:
+        raise Problem("no lockfiles found")
     return result.findings
