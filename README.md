@@ -628,8 +628,8 @@ for finding in unripe.scan(["."], min_age="3d", exclude=["npm:@myorg/*"]):
 ```
 
 Each finding's state is `ok`, `unripe`, `unknown`, `allowed` or `excluded`.
-`scan()` raises `unripe.check.Problem` if a lockfile can't be read or the
-`since` ref doesn't exist.
+`scan()` raises `unripe.check.Problem` if no lockfiles are found, a lockfile
+can't be read, or the `since` ref doesn't exist.
 
 ## Questions
 

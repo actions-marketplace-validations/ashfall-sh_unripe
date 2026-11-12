@@ -231,6 +231,13 @@ def test_since_works_in_a_subdirectory(fake, lookups, repo):
     assert states(result) == {("fresh", "2.0.0"): "ok"}
 
 
+def test_scan_reports_missing_lockfiles(fake, tmp_path):
+    import unripe
+
+    with pytest.raises(Problem, match="no lockfiles found"):
+        unripe.scan([str(tmp_path)], cache=False)
+
+
 def test_scan_is_the_library_entry_point(fake, tmp_path):
     from datetime import datetime, timezone
 
