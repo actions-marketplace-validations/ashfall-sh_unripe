@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.12.0 (2026-11-12)
+
+- Python's `unripe.scan()` raises `unripe.check.Problem` when no lockfiles
+  are found. A successful scan with no matching dependencies still
+  returns an empty list.
+- `python scripts/benchmark.py` measures cold and warm cache runs and
+  checks that both return the same dependency results.
+- The proposed v1.0 compatibility guide documents the CLI, JSON report,
+  configuration, and Python API.
+
 ## 0.11.0 (2026-11-04)
 
 - Composer versions are dated by Packagist's `published-time`, its own record
