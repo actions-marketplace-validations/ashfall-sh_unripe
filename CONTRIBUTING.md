@@ -16,6 +16,16 @@ that answers the way each real registry does, so the code that builds URLs
 and reads answers is tested too. If a test needs a registry, use the `fake`
 fixture and `fake.add(ecosystem, name, version, age)`.
 
+## Measuring the cache
+
+Run `python scripts/benchmark.py` from a checkout to time the npm and PyPI
+fixtures used by the live tests. Pass lockfile paths to use other public
+dependencies. The script uses a temporary cache and runs the same check
+twice. It prints elapsed time, registry requests, and the number of findings
+for each run, and stops if the scans disagree or cannot date a dependency.
+The cold run needs network access. Times include starting Python and vary
+with the machine and network. Version suggestions are disabled.
+
 ## The rules unripe keeps
 
 - No runtime dependencies. Only the standard library. A supply-chain tool

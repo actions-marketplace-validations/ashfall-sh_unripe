@@ -15,8 +15,6 @@ The rules every item has to keep:
 
 ## Next
 
-- **A benchmark script.** Reproducible cold and warm cache timings on public
-  lockfiles, so speed claims can be checked by anyone.
 - **The v1.0 contract.** Exit codes, the JSON schema
   ([docs/json.md](docs/json.md)), config keys and the Python API, written down
   as what won't change without a major version.
@@ -88,7 +86,7 @@ Done means released, with tests. The version says when.
 
 | # | Item | Status |
 |---|---|---|
-| 21 | Reproducible benchmarks | Next |
+| 21 | Reproducible benchmarks | Available in [scripts/benchmark.py](scripts/benchmark.py) |
 | 22 | Configurable parallelism | Later |
 | 23 | Cache integrity and versioning | Later |
 | 24 | Changed-dependency scanning | Done: `--since` |
