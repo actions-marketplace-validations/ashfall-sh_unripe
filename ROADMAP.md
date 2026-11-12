@@ -15,9 +15,8 @@ The rules every item has to keep:
 
 ## Next
 
-- **The v1.0 contract.** Exit codes, the JSON schema
-  ([docs/json.md](docs/json.md)), config keys and the Python API, written down
-  as what won't change without a major version.
+- **The v1.0 contract.** Review the [proposed compatibility contract](docs/compatibility.md)
+  before committing to it in v1.0.
 
 ## Later
 
@@ -157,4 +156,4 @@ Done means released, with tests. The version says when.
 | 67 | Release provenance | Done: PyPI trusted publishing from a tagged release |
 | 68 | Adoption measurement | Not planned |
 | 69 | Issue triage | Done: bug and ecosystem templates |
-| 70 | v1.0 contract | Next |
+| 70 | v1.0 contract | [Drafted](docs/compatibility.md), pending v1.0 review |

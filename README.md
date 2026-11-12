@@ -619,6 +619,9 @@ these settings, with examples.
 
 ## Using it from Python
 
+The [compatibility guide](docs/compatibility.md) covers the CLI, JSON,
+configuration, and Python interfaces.
+
 ```python
 import unripe
 
